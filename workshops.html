@@ -416,6 +416,13 @@
     }
 
     filter();
+    function clearAll() {
+      document.getElementById('searchInput').value = '';
+      document.getElementById('catFilter').value = '';
+      document.getElementById('levelFilter').value = '';
+      document.getElementById('formatFilter').value = '';
+      filter();
+    }
   </script>
 
 </body>

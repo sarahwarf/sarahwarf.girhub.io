@@ -527,16 +527,18 @@
 
     function filterWorkshops() {
       const query = document.getElementById('searchInput').value.toLowerCase();
+      const type = document.getElementById('typeFilter').value;
       const cat = document.getElementById('catFilter').value;
       const level = document.getElementById('levelFilter').value;
       const topic = document.getElementById('topicFilter').value;
 
       const filtered = workshops.filter(w => {
         const matchSearch = !query || w.title.toLowerCase().includes(query) || w.abstract.toLowerCase().includes(query);
+        const matchType = !type || w.type === type;
         const matchCat = !cat || w.category.includes(cat);
         const matchLevel = !level || w.level.includes(level);
         const matchTopic = !topic || w.topics.includes(topic);
-        return matchSearch && matchCat && matchLevel && matchTopic;
+        return matchSearch && matchType && matchCat && matchLevel && matchTopic;
       });
 
       const resultsEl = document.getElementById('results');
@@ -568,6 +570,7 @@
 
     function clearAll() {
       document.getElementById('searchInput').value = '';
+      document.getElementById('typeFilter').value = '';
       document.getElementById('catFilter').value = '';
       document.getElementById('levelFilter').value = '';
       document.getElementById('topicFilter').value = '';

@@ -59,7 +59,6 @@
     }
 
     .card p { margin-bottom: 12px; }
-    .card p:last-child { margin-bottom: 0; }
 
     .filters {
       display: flex;
@@ -184,35 +183,34 @@
     <div class="card">
       <h2>Faculty Development Workshops</h2>
       <p>I offer workshops and invited talks for university teachers that can be delivered as individual sessions, short workshop series, or full professional development programs, either online or in person. These sessions were originally developed through faculty development work at universities in China and through presentations at regional and international conferences. They are designed for instructors working in EFL, EMI, and academic English contexts and focus on practical strategies teachers can apply directly in their classrooms.</p>
-      <p>Use the search tool below to browse workshops by category, topic, or audience level. All workshops can be delivered as standalone sessions or as part of a series or full professional development program. Contact me at sarahwarf&nbsp;@&nbsp;gmail.com
- or WeChat: sarahwarf to discuss what would work best for your context.</p>
+      <p>Use the search tool below to browse by category, topic, or audience level. All sessions can be adapted to your institutional context and delivered as a standalone workshop or as part of a larger program. Contact me at sarahwarf&nbsp;@&nbsp;gmail.com or WeChat: sarahwarf to discuss what would work best for your needs.</p>
     </div>
 
     <div class="card">
-      <input class="search-input" type="text" id="searchInput" placeholder="Search workshops..." oninput="filterWorkshops()" />
+      <input class="search-input" type="text" id="searchInput" placeholder="Search workshops and talks..." oninput="filterWorkshops()" />
       <div class="filters">
         <select id="catFilter" onchange="filterWorkshops()">
           <option value="">All categories</option>
           <option value="AI">AI-integrated</option>
           <option value="Language">Language pedagogy</option>
         </select>
-        <select id="skillFilter" onchange="filterWorkshops()">
-          <option value="">All topics</option>
-          <option value="Writing">Writing</option>
-          <option value="Speaking">Speaking</option>
-          <option value="Listening & Reading">Listening & Reading</option>
-          <option value="Vocabulary & Grammar">Vocabulary & Grammar</option>
-          <option value="Assessment">Assessment</option>
-          <option value="AI & Technology">AI & Technology</option>
-          <option value="Research & Professional Development">Research & Professional Development</option>
-          <option value="Four Skills">Four Skills / General</option>
-        </select>
         <select id="levelFilter" onchange="filterWorkshops()">
           <option value="">All levels</option>
           <option value="Primary">Primary</option>
-          <option value="Junior high">Junior high</option>
           <option value="Secondary">Secondary</option>
           <option value="Higher education">Higher education</option>
+        </select>
+        <select id="topicFilter" onchange="filterWorkshops()">
+          <option value="">All topics</option>
+          <option value="L2 Reading">L2 Reading</option>
+          <option value="L2 Writing">L2 Writing</option>
+          <option value="L2 Speaking">L2 Speaking</option>
+          <option value="L2 Listening">L2 Listening</option>
+          <option value="Vocabulary">Vocabulary</option>
+          <option value="Assessment">Assessment</option>
+          <option value="Teaching with Technology">Teaching with Technology</option>
+          <option value="Professional Development">Professional Development</option>
+          <option value="Four Skills">Four Skills</option>
         </select>
         <button onclick="clearAll()">Clear all</button>
       </div>
@@ -225,170 +223,225 @@
   <script>
     const workshops = [
       {
-        title: 'Using AI to find your English Writing "Voice"',
-        category: ["AI", "Language"],
-        skills: ["Writing", "AI & Technology"],
-        level: ["Junior high", "Secondary", "Higher education"],
-        abstract: "Artificial Intelligence (AI) Generative tools are quickly changing the face of language education. English language learners in particular can benefit from using AI especially when they are struggling to say write productively or meaningfully in a second language, or to find their English Voice. Instead of asking the AI to write the paper for us and take away the human from the process, we will consider small interventions that learners can accomplish to be successful writers in an L2. This workshop will lead participants through examples of communicative tasks for EFL students to help them as they develop their English Voice at all stages of the writing process—from development, to research, to final revisions."
+        title: "Action-Based Research in the EFL Classroom",
+        type: "Workshop",
+        category: ["Language"],
+        level: ["Primary", "Secondary", "Higher education"],
+        topics: ["Professional Development"],
+        abstract: "All teachers are action-based researchers. This workshop uses interactive tasks to help you design and carry out EFL research projects in your classrooms. We discuss what action-based research is, who can be an action-based researcher (it's YOU!), and the different ways you can collect data in your classroom. We also talk about encouraging communities of teachers and how you can work together on your research projects. Finally, we discuss how you can get your research published in the English Teaching Forum, an English-language magazine aimed at EFL teachers around the world."
       },
       {
-        title: "Critical Thinking AI Tasks for the EFL Classroom",
-        category: ["AI", "Language"],
-        skills: ["Writing", "AI & Technology"],
-        level: ["Junior high", "Secondary", "Higher education"],
-        abstract: "In an increasingly digital world, AI has emerged as a powerful ally in language education, offering innovative ways to enhance students' writing skills and providing personalized feedback. This interactive workshop explores the integration of AI tools in EFL writing instruction for beginner, intermediate, and advanced levels. Participants will learn about AI's benefits, including grammar and spell-checking algorithms, translation software, and text analysis tools. Through hands-on activities, participants will adapt these tools to meet learners' needs and address challenges. Ethical considerations will be discussed. By the end, teachers will be equipped to enhance writing instruction using AI tools, providing personalized feedback and support."
+        title: "Adapting Farrell's Reflective Cycle for Peer Observation in AI-Integrated Teaching",
+        type: "Talk",
+        category: ["AI"],
+        level: ["Higher education"],
+        topics: ["Professional Development", "Teaching with Technology"],
+        abstract: "Most professional development on AI in language teaching focuses on tools rather than on the reflective instructional decision-making that shapes how those tools are actually used in the classroom. This talk presents a structured peer-observation protocol adapted from Farrell's five-stage reflective cycle as a framework for supporting instructors in critically examining their AI-mediated teaching practices. Drawing on a training-of-trainers model, it walks participants through a replicable framework that links philosophy, principles, theory, practice, and beyond-practice reflection to observation rubrics, collaborative dialogue, and feedback design. Examples of observation prompts, reflective tasks, and implementation sequences illustrate how reflective cycles can be operationalized as institutional professional development systems rather than individual exercises. The talk argues that structured peer observation grounded in reflective theory can strengthen teacher agency, AI literacy, and pedagogical coherence while maintaining human-centered approaches to technology integration."
       },
       {
         title: "Best Practices for Peer Review",
+        type: "Workshop",
         category: ["Language"],
-        skills: ["Writing", "Assessment"],
-        level: ["Junior high", "Secondary", "Higher education"],
+        level: ["Secondary", "Higher education"],
+        topics: ["L2 Writing", "Assessment"],
         abstract: "Peer review is an excellent way to facilitate the editing process among your academic students. Effectively teaching your students how to conduct peer reviews can guarantee higher student success because students are taught how to critically think about their writing and editing skills. This interactive workshop will illustrate best practices for peer review including creating and applying rubrics, tips for talking to students about peer review, how to work in both pairs and groups, and practical ways to informally assess student progress."
       },
       {
-        title: "Informal Assessment Practices for Large Classes",
-        category: ["Language"],
-        skills: ["Assessment"],
-        level: ["Primary", "Junior high", "Secondary", "Higher education"],
-        abstract: "Informal assessments are a necessary and useful part of every curriculum, and language learners need constant feedback on their progress in order to continue to make gains toward their language goals. In large classes, it can sometimes be difficult to provide this feedback to every student on a daily basis. This workshop will present strategies to quickly and efficiently gather informal feedback on student progress that accommodates larger class sizes."
+        title: "Building a Practical Toolkit for Evaluating AI-Generated Language Teaching Materials",
+        type: "Workshop",
+        category: ["AI"],
+        level: ["Higher education"],
+        topics: ["Teaching with Technology", "Professional Development"],
+        abstract: "As AI tools become part of everyday lesson preparation, language teachers need reliable ways to judge whether AI-generated materials are accurate, appropriate, and instructionally useful. This hands-on workshop guides participants through creating a practical evaluation toolkit they can use to review AI-generated classroom materials quickly and confidently. Participants will analyze sample AI-produced language activities, identify strengths and weaknesses, and collaboratively develop criteria for assessing linguistic quality, level suitability, pedagogical value, and alignment with learning goals. They will then apply their criteria to additional examples and refine their framework into a usable checklist and decision process. By the end of the session, each participant will have a customizable evaluation tool they can immediately use to review AI-generated materials before classroom use."
+      },
+      {
+        title: "Building Chatbots for Language Learning: Critical and Practical Approaches",
+        type: "Workshop",
+        category: ["AI"],
+        level: ["Higher education"],
+        topics: ["Teaching with Technology", "Professional Development"],
+        abstract: "The rapid expansion of large language models has led to a surge in the gamification of language learning, particularly through chatbots designed by professionals with backgrounds in game design rather than second language acquisition. This workshop invites participants to critically examine how such design principles shape learner interaction and to consider their implications for pedagogy and engagement. Participants will explore how to build their own chatbots using free tools and corpora, creating opportunities for conversation practice, writing development, and data-driven learning. Together participants will review examples of classroom chatbots, reflect on the limitations of gamified approaches, and discuss the growing role of AI agents within university systems. Through guided, hands-on work, the session aims to empower instructors to design informed, ethical, and human-centered chatbot experiences that align with principles of language learning and teaching."
+      },
+      {
+        title: "Building Critical Thinking with AI Output Validation Tasks",
+        type: "Talk",
+        category: ["AI"],
+        level: ["Higher education"],
+        topics: ["L2 Speaking", "L2 Listening", "Assessment", "Professional Development", "Teaching with Technology"],
+        abstract: "This talk addresses a pressing challenge for language teachers in the age of AI: how to measure learning and critical thinking in contexts where students have access to AI-generated content, and how to design tasks that both activate critical thinking skills and produce assessable outcomes. It introduces output validation tasks as a classroom activity that develops critical thinking and L2 listening and speaking skills simultaneously. Drawing on noticing theory and task-based language teaching, it presents a task design in which students analyze AI-generated responses to course materials, identify inaccuracies or omissions, and locate evidence in source texts to support a corrected version through spoken discussion and peer interaction. Sample tasks, student prompts, and implementation sequences illustrate how the activity works in an L2 listening and speaking context, and the talk considers how this approach positions AI output as a claim to be verified rather than an authoritative answer."
       },
       {
         title: "Building L2 Corpora in a Writing Class",
+        type: "Workshop",
         category: ["Language"],
-        skills: ["Writing", "Vocabulary & Grammar"],
-        level: ["Junior high", "Secondary", "Higher education"],
+        level: ["Secondary", "Higher education"],
+        topics: ["L2 Writing", "Teaching with Technology"],
         abstract: "A corpus is a database of texts that researchers and teachers can use to investigate language use of native and non-native speakers. A corpus can be useful in any language class by providing real-world examples of language for students to notice and study. In addition to using published corpora of native speakers' language use, it is possible for students to build their own corpus (text database) of their writing to notice and study the language they use as learners of English. This workshop will talk about resources available for teachers that will allow their students to build individual and class corpora of learner language use. Participants will practice investigating samples from a corpus to model how to create lessons for their language classes using this tool. Lessons on noticing grammar, vocabulary, and essay organization will be discussed."
       },
       {
         title: "Communicative Activities in a Reading/Writing Class",
+        type: "Workshop",
         category: ["Language"],
-        skills: ["Writing", "Listening & Reading", "Four Skills"],
-        level: ["Primary", "Junior high", "Secondary", "Higher education"],
+        level: ["Primary", "Secondary", "Higher education"],
+        topics: ["L2 Reading", "L2 Writing", "Four Skills"],
         abstract: "When teachers integrate communicative activities into their lessons, students are more likely to produce and practice the target language. Communicative activities are also good for getting students motivated and involved in the learning process. This workshop will model communicative activities to get students motivated and moving during reading and writing lessons. Participants will learn how to create activities using their current textbooks. They will also have the opportunity to practice the activities together."
       },
       {
-        title: "Focus on Fluency",
+        title: "Corpus-based Tasks for Writing",
+        type: "Workshop",
         category: ["Language"],
-        skills: ["Four Skills"],
-        level: ["Primary", "Junior high", "Secondary", "Higher education"],
+        level: ["Secondary", "Higher education"],
+        topics: ["L2 Writing", "Teaching with Technology"],
+        abstract: "Corpus-informed materials provide teachers opportunities to enhance upon their native-speaker intuition, bringing relevant and valid real world talk into the EFL classroom. In this workshop, participants will receive an introduction to the use of online corpora as a teaching tool for EFL learners using a data-driven learning (DDL) approach. This workshop will be divided into two parts. First, a brief introduction to online corpora and free corpus-building software will be provided. Information on how to search corpora online, as well as how to run simple searches, will be covered. Second, participants will engage in hands-on activities that have been developed for the EFL classroom. These activities will help participants introduce online corpora to students and train students on how to be data miners through noticing."
+      },
+      {
+        title: "Creating Peer Observation Tools for AI-Integrated Teaching",
+        type: "Workshop",
+        category: ["AI"],
+        level: ["Higher education"],
+        topics: ["Professional Development", "Teaching with Technology"],
+        abstract: "Teacher education is under increasing pressure to prepare instructors to work critically and effectively with generative AI, yet most professional development still focuses on tools rather than the pedagogical decision-making that shapes classroom practice. This hands-on workshop introduces a practical model for designing peer-observation protocols grounded in Farrell's reflective practice cycle. Participants will complete a brief reflective mapping task to identify beliefs and experiences that shape their instructional choices about technology, articulate guiding principles for AI-mediated teaching, and collaboratively design observation criteria aligned with reflective stages. They will then apply their criteria to a short teaching example and refine their protocol for use in their own institutional contexts. The workshop demonstrates how structured observation grounded in reflective theory can support teacher agency, pedagogical coherence, and critical AI literacy while maintaining human-centered approaches to technology integration."
+      },
+      {
+        title: "Critical Thinking AI Tasks for the EFL Classroom",
+        type: "Workshop",
+        category: ["AI", "Language"],
+        level: ["Secondary", "Higher education"],
+        topics: ["L2 Writing", "Teaching with Technology", "Assessment"],
+        abstract: "In an increasingly digital world, AI has emerged as a powerful ally in language education, offering innovative ways to enhance students' writing skills and providing personalized feedback. This interactive workshop explores the integration of AI tools in EFL writing instruction for beginner, intermediate, and advanced levels. Participants will learn about AI's benefits, including grammar and spell-checking algorithms, translation software, and text analysis tools. Through hands-on activities, participants will adapt these tools to meet learners' needs and address challenges. Ethical considerations will be discussed. By the end, teachers will be equipped to enhance writing instruction using AI tools, providing personalized feedback and support."
+      },
+      {
+        title: "Evaluating AI-Generated Language Teaching Materials: A Practical Framework for Teachers",
+        type: "Talk",
+        category: ["AI"],
+        level: ["Higher education"],
+        topics: ["Teaching with Technology", "Professional Development"],
+        abstract: "Generative AI tools are increasingly used by language teachers to create worksheets, prompts, explanations, and activities, yet many educators lack clear methods for determining whether these materials actually support learning. This talk introduces a practical evaluation framework that helps teachers systematically assess AI-generated instructional materials before using them in class. The framework guides teachers in examining outputs for linguistic accuracy, level appropriateness, task validity, alignment with learning objectives, and potential bias. Through analysis of sample AI-generated materials, it demonstrates how outputs that appear fluent and well-structured may still be pedagogically ineffective, and how structured evaluation improves instructional decision-making. Rather than focusing on specific tools, the talk provides a transferable process teachers can apply to any AI platform or future technology, arguing that the ability to critically evaluate AI-generated content is a core component of teacher AI literacy and a necessary skill for responsible and effective integration of AI in language classrooms."
+      },
+      {
+        title: "Focus on Fluency",
+        type: "Workshop",
+        category: ["Language"],
+        level: ["Primary", "Secondary", "Higher education"],
+        topics: ["Four Skills", "Assessment"],
         abstract: "Fluency in a second language is the goal for many learners, and it can be practiced in all four areas of language learning (reading, writing, listening, and speaking.) This workshop will model for participants how to integrate fluency activities during regular class activities. Participants will learn how to create activities using their current textbooks. They will also have the opportunity to practice the activities together. Participants will also learn different strategies for assessing fluency in the four areas of language learning."
       },
       {
-        title: "Strategies for Teaching Vocabulary",
+        title: "Fluency Tasks for the EFL Writing Classroom",
+        type: "Workshop",
         category: ["Language"],
-        skills: ["Vocabulary & Grammar"],
-        level: ["Junior high", "Secondary", "Higher education"],
-        abstract: "For students, learning vocabulary can be both frustrating and rewarding. Vocabulary knowledge may seem so important to EFL learners that in their minds it is elevated to the \"one thing\" holding an individual back from that next language or academic goal. At the same time, EFL learners wisely point out how complex and complicated it is to truly grasp individual word meaning. This session introduces six reflective questions for TESOL professionals to consider when planning a vocabulary lesson or vocabulary class. Using these questions as a guiding theme, participants will be shown examples of how to generate their own definition of what it means to know a word, and how to communicate that to students; how to create and implement vocabulary activities using a learner dictionary; the importance of teaching collocations; how to generate meaningful cloze activities; spelling and pronunciation activities using the IPA; and how to assess vocabulary using online tools."
+        level: ["Secondary", "Higher education"],
+        topics: ["L2 Writing"],
+        abstract: "For many students, the hardest thing about writing in a second language is starting, or getting words on the page. Accuracy in writing is the goal for many EFL writing classrooms, but helping students develop fluency is an essential first step. Fluency tasks are also useful in encouraging recall strategies in learners, which improves vocabulary acquisition. This interactive workshop is aimed at helping students increase their motivation and skill in L2 writing, in order to develop the grammar and vocabulary needed to master writing in English. The workshop will begin with a discussion of the importance of fluency in second language acquisition. For the remainder of the time, participants will practice L2 writing fluency tasks that will be immediately applicable to their current teaching contexts."
+      },
+      {
+        title: "Generative AI and Oral Assessment in EFL Classrooms",
+        type: "Talk",
+        category: ["AI"],
+        level: ["Higher education"],
+        topics: ["L2 Speaking", "Assessment", "Teaching with Technology", "Professional Development"],
+        abstract: "AI tools are rapidly entering L2 speaking assessment contexts, yet instructors are largely navigating this shift without clear institutional guidance. Drawing on current research in AI-mediated assessment, this talk examines how AI is being used across summative, formative, and teacher-supported oral assessment contexts, including AI interlocutors, automated feedback tools, and transcript-based analysis of L2 speech. It considers practical strategies for integrating AI into L2 speaking assessment in ways that are pedagogically sound, ethically responsible, and aligned with principles of validity and reliability, with attention to key questions around authenticity, data privacy, and instructor agency."
+      },
+      {
+        title: "Graphic Organizers for Academic Reading: A Teaching Tip",
+        type: "Talk",
+        category: ["Language"],
+        level: ["Secondary", "Higher education"],
+        topics: ["L2 Reading", "Professional Development"],
+        abstract: "This talk introduces the Frame Organizer as a practical graphic organizer tool for L2 academic reading classrooms. Drawing on research in reading comprehension and intertextuality, it presents the Frame Organizer as a notetaking and reading strategy that encourages students to engage critically with academic texts, practice paraphrasing, and develop autonomous reading skills. Applications for homework, in-class tasks, peer review, and self-assessment are discussed, with examples from classroom use at NYU Shanghai."
+      },
+      {
+        title: "Humanistic Approaches to AI in the Language Classroom",
+        type: "Talk",
+        category: ["AI"],
+        level: ["Higher education"],
+        topics: ["Teaching with Technology", "Professional Development"],
+        abstract: "Artificial intelligence is rapidly reshaping how languages are taught and learned, transforming the ways students generate ideas, practice skills, and engage with academic content. As AI becomes integrated into everyday educational practice, the challenge lies in ensuring its use supports rather than replaces the humanistic values at the core of learning. This keynote presents a model for AI integration in university-level English for Academic Purposes courses that distinguishes between autonomous AI language learning outside the classroom and a learner-as-collaborator approach inside it. Through structured, content-based tasks, students develop independent AI literacies beyond the classroom, while classroom time remains a technology-free environment focused on interaction, reflection, and collaboration. This design enables learners to recognize and navigate the complementary roles of AI-mediated and human-centered learning, illustrating how small pedagogical interventions can cultivate both autonomy and critical awareness. The talk argues that such humanistic approaches to AI prepare students to engage with emerging technologies responsibly while maintaining the relational and interpretive dimensions that define education."
       },
       {
         title: "Icebreakers for EFL Students",
+        type: "Workshop",
         category: ["Language"],
-        skills: ["Speaking", "Four Skills"],
-        level: ["Primary", "Junior high", "Secondary"],
+        level: ["Primary", "Secondary"],
+        topics: ["L2 Speaking", "Four Skills"],
         abstract: "Icebreakers are activities whose main purpose is to create a sense of community and fun in the language classroom. One way to maximize second language (L2) learning is through communicative tasks. These tasks require learners to produce language around meaningful topics. Icebreakers will help lower individual learners' inhibitions about speaking in the classroom as they get to know one another better. Icebreakers can be used at the beginning of a course, or they can be included in the classroom at any time that teachers want to create a more collaborative learning environment. They are also a fun and low-stress way for students to improve their speaking fluency and confidence speaking in an L2. In this workshop, teachers will practice three icebreakers: Find Someone Who; Name Your Favorite; and Acrostic Foldables. Teachers will use their knowledge of each icebreaker to design an icebreaker that fits their classroom context."
       },
       {
-        title: "Corpus-based Tasks for Writing",
+        title: "Informal Assessment Practices for Large Classes",
+        type: "Workshop",
         category: ["Language"],
-        skills: ["Writing", "Vocabulary & Grammar"],
-        level: ["Junior high", "Secondary", "Higher education"],
-        abstract: "Corpus-informed materials provide teachers opportunities to enhance upon their native-speaker intuition, bringing relevant and valid real world talk into the EFL classroom. In this workshop, participants will receive an introduction to the use of online corpora as a teaching tool for EFL learners using a data-driven learning (DDL) approach. This workshop will be divided into two parts. First, a brief introduction to online corpora and free corpus-building software will be provided. Information on how to search corpora online, as well as how to run simple searches, will be covered. Second, participants will engage in hands-on activities that have been developed for the EFL classroom. These activities will help participants introduce online corpora to students and train students on how to be \"data miners\" through noticing."
+        level: ["Primary", "Secondary", "Higher education"],
+        topics: ["Assessment", "Four Skills"],
+        abstract: "Informal assessments are a necessary and useful part of every curriculum, and language learners need constant feedback on their progress in order to continue to make gains toward their language goals. In large classes, it can sometimes be difficult to provide this feedback to every student on a daily basis. This workshop will present strategies to quickly and efficiently gather informal feedback on student progress that accommodates larger class sizes."
       },
       {
         title: "Integrating Listening into the Reading Curriculum",
+        type: "Workshop",
         category: ["Language"],
-        skills: ["Listening & Reading"],
-        level: ["Junior high", "Secondary", "Higher education"],
+        level: ["Secondary", "Higher education"],
+        topics: ["L2 Listening", "L2 Reading"],
         abstract: "Reading proficiency in a second language (L2) improves when learners are encouraged to listen to audio while they read. Not only does this practice affect reading speed, it also raises individual learners' phonetic awareness of the target language. This workshop will present different ideas on how to incorporate listening activities into a reading class. Teachers will learn about the benefits of such practices, be introduced to free resources available for improving reading through listening, and design tasks they can use in their own classrooms."
       },
       {
         title: "Speaking Tasks in the EFL Classroom",
+        type: "Workshop",
         category: ["Language"],
-        skills: ["Speaking"],
-        level: ["Junior high", "Secondary", "Higher education"],
+        level: ["Secondary", "Higher education"],
+        topics: ["L2 Speaking", "Assessment"],
         abstract: "Due largely to the fact that they do not live in an English-dominant environment, it is critical that EFL students practice language production in their classrooms. The EFL classroom may be the only context in which they produce the language, and production is necessary for individual success in a second language. At the same time, EFL students may be uncomfortable speaking for a variety of reasons. This workshop will discuss how to teach speaking in an EFL classroom. Teachers will practice tasks aimed at teaching individual speaking skills for presentations and interactive assignments. Teachers will have the time to create lessons based on these strategies that they can use in their individual classrooms. Assessment of speaking tasks will also be discussed."
       },
       {
-        title: "Fluency Tasks for the EFL Writing Classroom",
+        title: "Strategies for Teaching Vocabulary",
+        type: "Workshop",
         category: ["Language"],
-        skills: ["Writing"],
-        level: ["Junior high", "Secondary", "Higher education"],
-        abstract: "For many students, the hardest thing about writing in a second language is starting, or getting words on the page. Accuracy in writing is the goal for many EFL writing classrooms, but helping students develop fluency is an essential first step. Fluency tasks are also useful in encouraging recall strategies in learners, which improves vocabulary acquisition. This interactive workshop is aimed at helping students increase their motivation and skill in L2 writing, in order to develop the grammar and vocabulary needed to master writing in English. The workshop will begin with a discussion of the importance of fluency in second language acquisition. For the remainder of the time, participants will practice L2 writing fluency tasks that will be immediately applicable to their current teaching contexts."
+        level: ["Secondary", "Higher education"],
+        topics: ["Vocabulary"],
+        abstract: "For students, learning vocabulary can be both frustrating and rewarding. Vocabulary knowledge may seem so important to EFL learners that in their minds it is elevated to the \"one thing\" holding an individual back from that next language or academic goal. At the same time, EFL learners wisely point out how complex and complicated it is to truly grasp individual word meaning. This session introduces six reflective questions for TESOL professionals to consider when planning a vocabulary lesson or vocabulary class. Using these questions as a guiding theme, participants will be shown examples of how to generate their own definition of what it means to know a word, and how to communicate that to students; how to create and implement vocabulary activities using a learner dictionary; the importance of teaching collocations; how to generate meaningful cloze activities; spelling and pronunciation activities using the IPA; and how to assess vocabulary using online tools."
+      },
+      {
+        title: "Task-Based Reflection on Transfer in EAP",
+        type: "Talk",
+        category: ["Language"],
+        level: ["Higher education"],
+        topics: ["Assessment", "Professional Development"],
+        abstract: "Transfer of learning is a central goal of EAP instruction, yet students often fail to recognize or apply EAP knowledge and skills in their disciplinary courses. This talk examines how task-based reflective assessment can measure and promote students' metacognitive awareness of potential transfer from content-based EAP courses to broader academic programs. It explains how bridging strategies that promote metacognitive processing and abstraction can be operationalized within collaborative tasks that meet core task-based language teaching criteria, including authentic communicative purpose, meaning-focused outcomes, and real-world audience engagement. The talk discusses the design, implementation, and analysis of an end-of-semester collaborative reflection task in which students articulate their understanding of what they have learned and project how these competencies might apply in future academic contexts. Observations from multiple implementations reveal patterns in how students conceptualize transfer and common gaps in metacognitive awareness, with implications for both pedagogy and assessment."
       },
       {
         title: "Teaching Small Talk in the EFL Classroom",
+        type: "Workshop",
         category: ["Language"],
-        skills: ["Speaking"],
-        level: ["Junior high", "Secondary", "Higher education"],
+        level: ["Secondary", "Higher education"],
+        topics: ["L2 Speaking"],
         abstract: "In this interactive workshop, participants are introduced to the idea of small talk, its importance in academic communities, and how it can encourage second language acquisition. They engage in communicative tasks for teaching small talk strategies to EFL learners in academic language communities, including focusing on the lexico-grammatical features of small talk."
       },
       {
-        title: "Action-Based Research in the EFL Classroom",
+        title: "Using Activate Games in the EFL Classroom",
+        type: "Workshop",
         category: ["Language"],
-        skills: ["Research & Professional Development"],
-        level: ["Primary", "Junior high", "Secondary", "Higher education"],
-        abstract: "All teachers are action-based researchers. This workshop uses interactive tasks to help you design and carry out EFL research projects in your classrooms. We discuss what action-based research is, who can be an action-based researcher (it's YOU!), and the different ways you can collect data in your classroom. We also we talk about encouraging communities of teachers and how you can work together on your research projects. Finally, we discuss how you can get your research published in the English Teaching Forum, an English-language magazine aimed at EFL teachers around the world."
+        level: ["Primary", "Secondary", "Higher education"],
+        topics: ["Four Skills", "Teaching with Technology"],
+        abstract: "Activate Games are a free resource from the American English website that EFL teachers can use in any EFL classroom — from primary students to university-level students. The games encourage critical thinking, communicative practices, community building, and fun. During this highly interactive workshop, participants will learn how to play the games. We will discuss the rationale for using these games in your EFL classrooms and how to adapt them for different levels of students."
       },
       {
-        title: "Using Activate Games in the EFL Classroom",
+        title: 'Using AI to Find Your English Writing "Voice"',
+        type: "Workshop",
+        category: ["AI", "Language"],
+        level: ["Secondary", "Higher education"],
+        topics: ["L2 Writing", "Teaching with Technology"],
+        abstract: "Artificial Intelligence (AI) generative tools are quickly changing the face of language education. English language learners in particular can benefit from using AI especially when they are struggling to write productively or meaningfully in a second language, or to find their English Voice. Instead of asking the AI to write the paper for us and take away the human from the process, we will consider small interventions that learners can accomplish to be successful writers in an L2. This workshop will lead participants through examples of communicative tasks for EFL students to help them as they develop their English Voice at all stages of the writing process — from development, to research, to final revisions."
+      },
+      {
+        title: "Visual Literacy as a Task for L2 Writing Development",
+        type: "Workshop",
         category: ["Language"],
-        skills: ["Four Skills"],
-        level: ["Primary", "Junior high", "Secondary", "Higher education"],
-        abstract: "Activate Games are a free resource from the American English website that EFL teachers can use in any EFL classroom—from primary students to university-level students. The games encourage critical thinking, communicative practices, community building, and FUN. During this highly interactive workshop, participants will learn how to play the games. We will discuss the rationale for using these games in your EFL classrooms and how to adapt them for different levels of students."
+        level: ["Higher education"],
+        topics: ["L2 Writing", "L2 Speaking"],
+        abstract: "This workshop introduces a pedagogical framework for integrating visual rhetoric into L2 writing instruction through a structured sequence combining theoretical framing, experiential participation, and methodological reflection. Participants will be led through a classroom-tested task in which international movie posters are analyzed collaboratively using a rhetorical framework based on logos, ethos, and pathos. Key procedural steps are highlighted to show where the activity can be expanded, scaffolded, or adapted depending on instructional time, proficiency level, or course objectives. Through guided interaction and discussion, the workshop demonstrates how visual texts can function as culturally embedded prompts for interpretation, negotiation of meaning, and language production. By experiencing the task sequence and examining its design rationale, participants will gain both a practical classroom activity and a principled model for incorporating visual rhetorical analysis into writing-focused language courses."
       }
     ];
 
     function filterWorkshops() {
       const query = document.getElementById('searchInput').value.toLowerCase();
       const cat = document.getElementById('catFilter').value;
-      const skill = document.getElementById('skillFilter').value;
       const level = document.getElementById('levelFilter').value;
-
-      const filtered = workshops.filter(w => {
-        const matchSearch = !query || w.title.toLowerCase().includes(query) || w.abstract.toLowerCase().includes(query);
-        const matchCat = !cat || w.category.includes(cat);
-        const matchSkill = !skill || w.skills.includes(skill);
-        const matchLevel = !level || w.level.includes(level);
-        return matchSearch && matchCat && matchSkill && matchLevel;
-      });
-
-      const resultsEl = document.getElementById('results');
-      document.getElementById('count').textContent = 'Showing ' + filtered.length + ' of ' + workshops.length + ' workshops';
-
-      if (filtered.length === 0) {
-        resultsEl.innerHTML = '<div class="no-results">No workshops match your filters.</div>';
-        return;
-      }
-
-      resultsEl.innerHTML = filtered.map((w, i) => `
-        <div class="workshop-item" id="item-${i}">
-          <div class="workshop-header" onclick="toggle(${i})">
-            <div>
-              <div class="workshop-title">${w.title}</div>
-              <div class="workshop-meta">${w.category.join(' & ')} · ${w.skills.join(', ')} · ${w.level.join(', ')}</div>
-            </div>
-            <div class="workshop-arrow">▼</div>
-          </div>
-          <div class="workshop-body">${w.abstract}</div>
-        </div>
-      `).join('');
-    }
-
-    function toggle(i) {
-      const item = document.getElementById('item-' + i);
-      item.classList.toggle('open');
-    }
-
-    function clearAll() {
-      document.getElementById('searchInput').value = '';
-      document.getElementById('catFilter').value = '';
-      document.getElementById('skillFilter').value = '';
-      document.getElementById('levelFilter').value = '';
-      filterWorkshops();
-    }
-
-    filterWorkshops();
-  </script>
-
-</body>
-</html>
+      const topic = document.getElementById('topicFilter').valu

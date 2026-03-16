@@ -444,4 +444,53 @@
       const query = document.getElementById('searchInput').value.toLowerCase();
       const cat = document.getElementById('catFilter').value;
       const level = document.getElementById('levelFilter').value;
-      const topic = document.getElementById('topicFilter').valu
+      const topic = document.getElementById('topicFilter').value;
+
+      const filtered = workshops.filter(w => {
+        const matchSearch = !query || w.title.toLowerCase().includes(query) || w.abstract.toLowerCase().includes(query);
+        const matchCat = !cat || w.category.includes(cat);
+        const matchLevel = !level || w.level.includes(level);
+        const matchTopic = !topic || w.topics.includes(topic);
+        return matchSearch && matchCat && matchLevel && matchTopic;
+      });
+
+      const resultsEl = document.getElementById('results');
+      document.getElementById('count').textContent = 'Showing ' + filtered.length + ' of ' + workshops.length + ' sessions';
+
+      if (filtered.length === 0) {
+        resultsEl.innerHTML = '<div class="no-results">No sessions match your filters.</div>';
+        return;
+      }
+
+      resultsEl.innerHTML = filtered.map((w, i) => `
+        <div class="workshop-item" id="item-${i}">
+          <div class="workshop-header" onclick="toggle(${i})">
+            <div>
+              <div class="workshop-title">${w.title}</div>
+              <div class="workshop-meta">${w.type} · ${w.category.join(' & ')} · ${w.level.join(', ')} · ${w.topics.join(', ')}</div>
+            </div>
+            <div class="workshop-arrow">▼</div>
+          </div>
+          <div class="workshop-body">${w.abstract}</div>
+        </div>
+      `).join('');
+    }
+
+    function toggle(i) {
+      const item = document.getElementById('item-' + i);
+      item.classList.toggle('open');
+    }
+
+    function clearAll() {
+      document.getElementById('searchInput').value = '';
+      document.getElementById('catFilter').value = '';
+      document.getElementById('levelFilter').value = '';
+      document.getElementById('topicFilter').value = '';
+      filterWorkshops();
+    }
+
+    filterWorkshops();
+  </script>
+
+</body>
+</html>

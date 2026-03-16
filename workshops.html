@@ -181,7 +181,7 @@
   <div class="container">
 
     <div class="card">
-      <h2>Faculty Development Workshops</h2>
+      <h2>Workshops & Talks</h2>
       <p>I offer workshops and invited talks for university teachers that can be delivered as individual sessions, short workshop series, or full professional development programs, either online or in person. These sessions were originally developed through faculty development work at universities in China and through presentations at regional and international conferences. They are designed for instructors working in EFL, EMI, and academic English contexts and focus on practical strategies teachers can apply directly in their classrooms.</p>
       <p>Use the search tool below to browse by category, topic, or audience level. All sessions can be adapted to your institutional context and delivered as a standalone workshop or as part of a larger program. Contact me at sarahwarf&nbsp;@&nbsp;gmail.com or WeChat: sarahwarf to discuss what would work best for your needs.</p>
     </div>
@@ -189,6 +189,11 @@
     <div class="card">
       <input class="search-input" type="text" id="searchInput" placeholder="Search workshops and talks..." oninput="filterWorkshops()" />
       <div class="filters">
+        <select id="typeFilter" onchange="filterWorkshops()">
+          <option value="">All types</option>
+          <option value="Workshop">Workshop</option>
+          <option value="Talk">Talk</option>
+        </select>
         <select id="catFilter" onchange="filterWorkshops()">
           <option value="">All categories</option>
           <option value="AI">AI-integrated</option>
